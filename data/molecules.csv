@@ -1,0 +1,25 @@
+name,smiles,odors
+vanillin,COc1cc(C=O)ccc1O,sweet;vanilla
+limonene,CC1=CCC(CC1)C(=C)C,citrus;fresh
+linalool,CC(C)=CCCC(C)(O)C=C,floral;fresh
+geraniol,CC(C)=CCCC(C)=CCO,floral;rose
+citronellol,CC(C)=CCCC(C)CCO,floral;rose
+citral,CC(C)=CCCC(C)=CC=O,citrus;fresh
+isoamyl acetate,CC(C)CCOC(C)=O,fruity;banana
+ethyl butyrate,CCCC(=O)OCC,fruity;sweet
+ethyl acetate,CCOC(C)=O,fruity;sweet
+hexyl acetate,CCCCCCOC(C)=O,fruity;green
+benzaldehyde,O=Cc1ccccc1,almond;sweet
+benzyl acetate,CC(=O)OCc1ccccc1,floral;fruity
+phenethyl alcohol,OCCc1ccccc1,floral;rose
+eugenol,COc1cc(CC=C)ccc1O,spicy;clove
+cinnamaldehyde,O=CC=Cc1ccccc1,spicy;sweet
+menthol,CC(C)C1CCC(C)CC1O,minty;fresh
+cis-3-hexenol,CC/C=C\CCO,green;fresh
+hexanal,CCCCCC=O,green
+butyric acid,CCCC(O)=O,sour;cheesy
+acetic acid,CC(O)=O,sour
+dimethyl sulfide,CSC,sulfurous
+ethanethiol,CCS,sulfurous
+indole,c1ccc2[nH]ccc2c1,floral;animalic
+skatole,Cc1c[nH]c2ccccc12,animalic
