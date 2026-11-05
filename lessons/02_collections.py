@@ -95,5 +95,15 @@ print(sorted(set(all_labels)))  # ['floral', 'fresh', 'sweet']
 # 연습문제 (정답: lessons/answers.py)
 # ---------------------------------------------------------------------
 # 1) [1.0, 1.1, 1.9, 1.7]에서 최댓값과 첫 값의 차이를 출력하세요.
+num_list = [1.0, 1.1, 1.9, 1.7]
+print(round(max(num_list) - num_list[0], 2))
+
 # 2) limonene 딕셔너리를 만들고 "smiles" 항목으로 "CC1=CCC(CC1)C(=C)C"를 추가하세요.
+limonene = {"name" : "limonene"}
+limonene["smiles"] = "CC1=CCC(CC1)C(=C)C"
+print(limonene)
+
 # 3) {"fruity", "sweet", "banana"}와 {"fruity", "green"}의 자카드 유사도를 구하세요.
+a = {"fruity", "sweet", "banana"}
+b = {"fruity", "green"}
+print(f"{len(a & b) / len(a | b):.2f}")

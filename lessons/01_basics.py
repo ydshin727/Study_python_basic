@@ -101,17 +101,11 @@ print(not is_pleasant)  # 반대로
 # 연습문제 (정답: lessons/answers.py)
 # ---------------------------------------------------------------------
 # 1) 기준값 2.0, 최고값 3.5일 때 증가율을 "증가율: 75.0%" 형태로 출력하세요.
-baseline = 2.0
-peak = 3.5
-increase_rate = (peak - baseline) / baseline * 100
-print(f"증가율: {increase_rate:.1f}%")
+base, top = 2.0, 3.5
+print(f"증가율: {(top - base) / base:.1%}")
 
 # 2) "citrus;fresh;sweet"을 쪼개 냄새 표현의 개수를 출력하세요.
-odor_text = "citrus;fresh;sweet"
-odors = odor_text.split(";")
-print(f"냄새 표현 개수: {len(odors)}")
+print(len("citrus;fresh;sweet".split(";")))
 
 # 3) SMILES "CCOC(C)=O"에서 C(대문자)가 몇 개인지 출력하세요.
-smiles = "CCOC(C)=O"
-count_C = smiles.count("C")
-print(f"C의 개수: {count_C}")
+print("CCOC(C)=O".count("C"))
