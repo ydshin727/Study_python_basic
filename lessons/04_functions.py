@@ -72,10 +72,10 @@ def cosine_similarity(a: list, b: list) -> float:
 
     전자코에서는 냄새의 진하기(크기)보다 센서 반응의 '패턴'이 중요해서 자주 씁니다.
     """
-    dot = sum(x * y for x, y in zip(a, b))
-    size_a = math.sqrt(sum(x * x for x in a))
+    dot = sum(x * y for x, y in zip(a, b)) # 내적
+    size_a = math.sqrt(sum(x * x for x in a)) # 벡터의 길이
     size_b = math.sqrt(sum(y * y for y in b))
-    return dot / (size_a * size_b)
+    return dot / (size_a * size_b) # 코사인 유사도
 
 
 pattern = [1.0, 0.3, 0.6]
@@ -140,6 +140,18 @@ print([molecule["name"] for molecule in by_size])
 # ---------------------------------------------------------------------
 # 1) 리스트의 첫 값을 기준으로 삼아 각 값에서 빼는 함수 baseline_correct(readings)를
 #    만드세요.
+def baseline_correct(readings):
+    return [listNum - readings[0] for listNum in readings]
+print(baseline_correct([1, 4, 3, 6, 2]))
+
 # 2) 값들을 최댓값으로 나누어 0~1로 만드는 normalize(values)를 만드세요.
 #    최댓값이 0이면 원래 리스트를 그대로 돌려주세요.
+def normalize(values):
+    if max(values) == 0:
+        return values
+    return [round(data / max(values), 2) for data in values]
+print(normalize([1, 6, 2, 0]), normalize([-4, 0]))
+
 # 3) 위 molecules를 heavy_atoms가 큰 순서로 정렬하세요. (힌트: reverse=True)
+topMolecules = sorted(molecules, key=lambda tm: tm["heavy_atoms"], reverse=True)
+print([tm["name"] for tm in topMolecules])

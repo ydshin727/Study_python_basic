@@ -102,7 +102,7 @@ print(not is_pleasant)  # 반대로
 # ---------------------------------------------------------------------
 # 1) 기준값 2.0, 최고값 3.5일 때 증가율을 "증가율: 75.0%" 형태로 출력하세요.
 base, top = 2.0, 3.5
-print(f"증가율: {(top - base) / base:.1%}")
+print(f"증가울: {(top - base) / base:.1%}")
 
 # 2) "citrus;fresh;sweet"을 쪼개 냄새 표현의 개수를 출력하세요.
 print(len("citrus;fresh;sweet".split(";")))

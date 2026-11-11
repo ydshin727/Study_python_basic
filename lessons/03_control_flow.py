@@ -118,5 +118,15 @@ print(counts)
 # 연습문제 (정답: lessons/answers.py)
 # ---------------------------------------------------------------------
 # 1) [1.0, 1.05, 1.5, 1.9, 1.2]에서 1.4보다 큰 값의 개수를 for로 세세요.
+list1 = [1.0, 1.05, 1.5, 1.9, 1.2]
+largeCount = 0
+for large in list1 :
+    if large > 1.4 :
+        largeCount += 1
+print(largeCount)
+
 # 2) 위 리스트의 각 값에서 첫 값을 뺀 리스트를 컴프리헨션으로 만드세요.
+print([round(minusFirst - list1[0], 2) for minusFirst in list1])
+
 # 3) ["CCO", "CC", "CCCO", "c1ccccc1"] 중 "O"가 들어간 것만 골라내세요.
+print([checkO for checkO in ["CCO", "CC", "CCCO", "c1ccccc1"] if "O" in checkO])
