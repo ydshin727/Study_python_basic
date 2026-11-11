@@ -63,7 +63,7 @@ class BaselineDetector:
 
     def predict(self, value):
         if self.baseline is None:
-            raise ValueError("fit을 먼저 호출해야 합니다.")
+            raise ValueError("fit을 먼저 호출해야 합니다.") # raise: 일부러 오류를 발생시키는 명령어 -> 함수 실행 중단
         return value > self.baseline + self.margin
 
 
@@ -122,4 +122,19 @@ print(calibrated.describe())  # 고치지 않은 메서드는 그대로 물려�
 # ---------------------------------------------------------------------
 # 1) 이름과 냄새 표현 목록을 받는 클래스 OdorSample(name, odors)을 만들고,
 #    냄새 표현 개수를 돌려주는 odor_count 메서드를 넣으세요.
+class OdorSample:
+    def __init__(self, name, odors):
+        self.name = name
+        self.odors = odors
+    def odor_count(self):
+        return len(self.odors)
+print(OdorSample("안녕", "향긋").odor_count())
+
 # 2) Sensor를 상속해 값을 scale배 해서 돌려주는 ScaledSensor를 만드세요.
+class ScaledSensor(Sensor):
+    def __init__(self, sensor_id, scale):
+        super().__init__(sensor_id)
+        self.scale = scale
+    def read(self, raw):
+        return raw * self.scale
+print(ScaledSensor("yenni", 5).read(3))
