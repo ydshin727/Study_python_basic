@@ -17,10 +17,10 @@ from pathlib import Path
 #    __file__은 지금 실행 중인 이 파일의 위치입니다.
 #    이렇게 하면 어느 폴더에서 실행해도 데이터를 찾습니다.
 # ---------------------------------------------------------------------
-PROJECT_DIR = Path(__file__).resolve().parent.parent
+PROJECT_DIR = Path(__file__).resolve().parent.parent # resolve: 절대경로로 변환 (Path 객체)
 DATA_DIR = PROJECT_DIR / "data"  # '/'로 경로를 이어 붙입니다.
 OUTPUT_DIR = PROJECT_DIR / "outputs"
-OUTPUT_DIR.mkdir(exist_ok=True)  # 폴더가 없으면 만듭니다.
+OUTPUT_DIR.mkdir(exist_ok=True)  # 폴더가 없으면 만듭니다. # exist_ok: 이미 존재하면 그냥 pass, 기본값 false
 
 # ---------------------------------------------------------------------
 # 2. 텍스트 파일 쓰기와 읽기
@@ -129,5 +129,21 @@ except ValueError as error:
 # ---------------------------------------------------------------------
 # 1) molecules에서 "floral" 표현을 가진 분자의 이름만 모아 outputs/floral.txt에
 #    한 줄에 하나씩 저장하세요.
+with open(DATA_DIR / "molecules.csv", encoding="utf-8") as file:
+    molecules = list(csv.DictReader(file))
+with open(OUTPUT_DIR / "floral.txt", "w", encoding="utf-8") as file:
+    for molecule in molecules:
+        if "floral" in molecule["odors"].split(";"):
+            file.write(molecule["name"] + "\n")
+with open(OUTPUT_DIR / "floral.txt", encoding="utf-8") as file:
+    print(file.read())
+
 # 2) ["1.0", "abc", "2.5"]를 float로 바꾸되 실패한 값은 None으로 채운 리스트를
 #    만드세요.
+floatList = []
+for changeNum in ["1.0", "abc", "2.5"]:
+    try:
+        floatList.append(float(changeNum))
+    except ValueError:
+        floatList.append(None)
+print(floatList)
